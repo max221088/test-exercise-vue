@@ -9,7 +9,7 @@
 			</label>
 			<div class="buttons">
 				<span class="user-name"></span>
-				<button class="button button-primary button-auth">
+				<button @click="openAuthModal()" class="button button-primary button-auth">
 					<span class="button-auth-svg"></span>
 					<span class="button-text">Войти</span>
 				</button>
@@ -32,6 +32,11 @@
 		name: 'HeaderComponenet',
 		components: {
 			
+		},
+		methods: {
+			openAuthModal() {
+				this.$emit('openAuthModal');
+			}
 		}
 	}
 

@@ -145,7 +145,7 @@ button {
 }
 
 .button-cart {
-    display: none;
+    /*display: none;*/
     margin: 0 5px;
 }
 
