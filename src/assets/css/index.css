@@ -1,0 +1,12 @@
+/* Fonts */
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic");
+
+/*Genral style*/
+
+@import './normalize.css';
+
+
+/* Components */
+
+@import './style.css';
