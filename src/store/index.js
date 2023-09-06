@@ -5,7 +5,8 @@ export default createStore({
 		db: {},
 		partners: {},
 		isOpenCart: false,
-		products: {}
+		products: {},
+		cart: {}
   },
   getters: {
 		getIsOpenCart (state) {
@@ -30,9 +31,11 @@ export default createStore({
 		},
 		fetchPartners (context) {
 			context.state.partners = require('../db/partners')
+			console.log(context.state.partners)
 		},
 		fetchProductsByRestourant (context, puth) {
 			context.state.products = require(`../db/${puth}`)
+			console.log(context.state.products)
 		},
   },
   modules: {

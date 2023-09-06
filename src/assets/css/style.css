@@ -214,10 +214,16 @@ button {
 
 .section-heading {
     display: flex;
+		justify-content: space-between;
     align-items: center;
     margin-bottom: 44px;
 }
-
+.section-heading-info{
+	display: flex;
+}
+.filter-section{
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.0015);
+}
 .section-title {
     font-style: normal;
     font-weight: bold;

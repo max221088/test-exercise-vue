@@ -8,7 +8,7 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/restorant/:puth',
+    path: '/restorant/:index',
     name: 'restorantViev',
 		props: true,
     // route level code-splitting

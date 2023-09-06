@@ -1,7 +1,7 @@
 <template>
 	<div class="cards cards-restaurants">
 		<router-link v-for="partner, index in partners" :key="index"  
-		:to="`/restorant/${partner.products}`"
+		:to="`/restorant/${index}`"
 			class="card card-restaurant">
 			<img :src="require(`../assets/${partner.image}`)" alt="image" class="card-image" />
 			<div class="card-text">
