@@ -21,26 +21,11 @@ import modalCart from "./components/modal/modalCart.vue"
 			modalAuth,
 			modalCart
 		},
-		props: {
-			
-		},
-		data () {
-			return {
-				db: {}
-			}
-		},
 		methods: {
 			isOpenAuthmodal() {
 				this.$refs.modalAuth.openModalAuth();
 			}
 		},
-		computed: {
-			
-		},
-		created () {
-			
-		}
-
 	}
 </script>
 

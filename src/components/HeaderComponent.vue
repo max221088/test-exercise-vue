@@ -33,9 +33,6 @@
 
 	export default {
 		name: 'HeaderComponenet',
-		components: {
-			
-		},
 		methods: {
 			openAuthModal() {
 				this.$emit('openAuthModal')

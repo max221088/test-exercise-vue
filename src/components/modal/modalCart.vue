@@ -36,14 +36,6 @@
 <script>
 export default {
 		name: 'modalAuth',
-		components: {
-			
-		},
-		data () {
-			return {
-				
-			}
-		},
 		computed: {
 			sumOrder () {
         let sum = 0;

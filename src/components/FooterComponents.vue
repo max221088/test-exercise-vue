@@ -25,9 +25,6 @@
 
 	export default {
 		name: 'FooterComponenet',
-		components: {
-			
-		}
 	}
 
 </script>

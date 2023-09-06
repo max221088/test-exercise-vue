@@ -31,8 +31,5 @@
 		props: {
 			partners: Object
 		},
-		components: {
-			
-		}
 	}
 </script>
