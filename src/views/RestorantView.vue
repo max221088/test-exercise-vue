@@ -72,7 +72,6 @@
 			addToCart(product) {
         product.amount = "1";
         this.$store.commit('addProductToCard', product)
-        //this.isShowAmount = true;
       },
 			sortByPrice() {
 				this.products.sort(function(a,b) {
@@ -82,7 +81,6 @@
 						return (a.price - b.price)
 					}
 				}.bind(this))
-				console.log(this.products)
 			}
 		},
 		computed: {

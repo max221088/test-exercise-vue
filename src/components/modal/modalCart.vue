@@ -18,6 +18,7 @@
 				</div>
 				<!-- /.foods-row -->
 			</div>
+			<span class="food-name" v-if="!productForCart.length">КОРЗИНА ПУСТАЯ</span>
 			<!-- /.modal-body -->
 			<div class="modal-footer">
 				<span class="modal-pricetag">{{sumOrder}} ₽</span>
