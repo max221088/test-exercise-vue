@@ -147,6 +147,17 @@ button {
 .button-cart {
     /*display: none;*/
     margin: 0 5px;
+		
+}
+
+.button-cart-quantiti{
+	font-size: 12px;
+  background-color: brown;
+  color: #fff;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 50%;
+  font-size: 12px;
 }
 
 .button-out {

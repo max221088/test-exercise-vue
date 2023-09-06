@@ -16,6 +16,9 @@
 				<button @click="openModalCart()" class="button button-cart" id="cart-button">
 					<span class="button-cart-svg"></span>
 					<span class="button-text">Корзина</span>
+					<span class="button-cart-quantiti" v-if="productForCart.length">
+            {{ productForCart.length }}
+          </span>
 				</button>
 				<button class="button button-primary button-out">
 					<span class="button-text">Выйти</span>
@@ -40,6 +43,16 @@
 			openModalCart () {
 				this.$store.commit('isOpenCart');
 			}
+		},
+		computed: {
+			productForCart () {
+        return this.$store.getters['getCartProducts'];
+      },
+		},
+		created () {
+			if (window.sessionStorage.cart) {
+        this.$store.commit('getCartFromSession', JSON.parse(window.sessionStorage.cart))
+      }
 		}
 	}
 

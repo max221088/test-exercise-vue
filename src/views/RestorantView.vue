@@ -35,7 +35,7 @@
 							</div>
 							<!-- /.card-info -->
 							<div class="card-buttons">
-								<button class="button button-primary button-add-cart">
+								<button @click="addToCart(product)" class="button button-primary button-add-cart">
 									<span class="button-card-text">В корзину</span>
 									<span class="button-cart-svg"></span>
 								</button>
@@ -69,6 +69,11 @@
 			}
 		},
 		methods: {
+			addToCart(product) {
+        product.amount = "1";
+        this.$store.commit('addProductToCard', product)
+        //this.isShowAmount = true;
+      },
 			sortByPrice() {
 				this.products.sort(function(a,b) {
 					if (this.sortParam == '1') {
