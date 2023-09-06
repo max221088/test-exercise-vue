@@ -13,7 +13,7 @@
 					<span class="button-auth-svg"></span>
 					<span class="button-text">Войти</span>
 				</button>
-				<button class="button button-cart" id="cart-button">
+				<button @click="openModalCart()" class="button button-cart" id="cart-button">
 					<span class="button-cart-svg"></span>
 					<span class="button-text">Корзина</span>
 				</button>
@@ -35,7 +35,10 @@
 		},
 		methods: {
 			openAuthModal() {
-				this.$emit('openAuthModal');
+				this.$emit('openAuthModal')
+			},
+			openModalCart () {
+				this.$store.commit('isOpenCart');
 			}
 		}
 	}

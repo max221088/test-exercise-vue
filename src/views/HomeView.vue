@@ -33,10 +33,8 @@
 					<label class="search">
 						<input type="text" class="input input-search" placeholder="Поиск блюд и ресторанов" />
 					</label>
-				</div>
-				<div class="cards cards-restaurants">
-					<RestorantCart></RestorantCart>
-				</div>
+				</div>		
+					<RestorantCart :partners="partners"></RestorantCart>
 				<!-- /.cards -->
 			</section>
 		</div>
@@ -54,6 +52,14 @@ export default {
   name: 'HomeView',
   components: {
     RestorantCart
-  }
+  },
+	computed: {
+		partners () {
+			return this.$store.getters['getPartners'];
+		}
+	},
+	created () {
+		this.$store.dispatch('fetchPartners')
+	}
 }
 </script>
