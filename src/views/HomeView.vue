@@ -33,8 +33,11 @@
 					<label class="search">
 						<input type="text" class="input input-search" placeholder="Поиск блюд и ресторанов" />
 					</label>
-				</div>		
-					<RestorantCart :partners="partners"></RestorantCart>
+				</div>	
+					<div class="cards cards-restaurants">	
+						<RestorantCart v-for="partner, index in partners" :key="index" 
+						:partner="partner" :index="index" ></RestorantCart>
+					</div>
 				<!-- /.cards -->
 			</section>
 		</div>

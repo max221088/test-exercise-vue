@@ -1,7 +1,5 @@
 <template>
-	<div class="cards cards-restaurants">
-		<router-link v-for="partner, index in partners" :key="index"  
-		:to="`/restorant/${index}`"
+		<router-link  :to="`/restorant/${index}`"
 			class="card card-restaurant">
 			<img :src="require(`../assets/${partner.image}`)" alt="image" class="card-image" />
 			<div class="card-text">
@@ -22,14 +20,14 @@
 			<!-- /.card-text -->
 		</router-link>
 	<!-- /.card -->
-</div>
 </template>
 
 <script>
 	export default {
 		name: 'RestorantCard',
 		props: {
-			partners: Object
+			partner: Object,
+			index: Number
 		},
 	}
 </script>

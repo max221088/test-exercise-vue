@@ -23,26 +23,7 @@
 				</div>
 				<div class="cards cards-menu" v-if="products">
 					<div class="card" v-for="product in products" :key="product.id">
-						<img :src="require(`../assets/${product.image}`)" alt="image" class="card-image" />
-						<div class="card-text">
-							<div class="card-heading">
-								<h3 class="card-title card-title-reg">{{ product.name }}</h3>
-							</div>
-							<!-- /.card-heading -->
-							<div class="card-info">
-								<div class="ingredients">{{ product.description }}
-								</div>
-							</div>
-							<!-- /.card-info -->
-							<div class="card-buttons">
-								<button @click="addToCart(product)" class="button button-primary button-add-cart">
-									<span class="button-card-text">В корзину</span>
-									<span class="button-cart-svg"></span>
-								</button>
-								<strong class="card-price-bold">{{ product.price }} ₽</strong>
-							</div>
-						</div>
-						<!-- /.card-text -->
+						<ProductCard :product="product"></ProductCard>
 					</div>
 					<!-- /.card -->
 				</div>
@@ -55,10 +36,12 @@
 </template>
 
 <script>
+import ProductCard from '../components/ProductCard.vue'
+
 	export default {
 		name: 'restorantViev',
 		components: {
-			
+			ProductCard
 		},
 		props: {
 			index: String
@@ -69,10 +52,6 @@
 			}
 		},
 		methods: {
-			addToCart(product) {
-        product.amount = "1";
-        this.$store.commit('addProductToCard', product)
-      },
 			sortByPrice() {
 				this.products.sort(function(a,b) {
 					if (this.sortParam == '1') {
