@@ -3,14 +3,9 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
 		db: {},
-		footBand: {},
-		gusiLebedi: {},
-		palkiSkalki: {},
 		partners: {},
-		pizzaBurger: {},
-		pizzaPlus: {},
-		tanuki: {},
 		isOpenCart: false,
+		products: {}
   },
   getters: {
 		getIsOpenCart (state) {
@@ -18,7 +13,10 @@ export default createStore({
 		},
 		getPartners (state) {
 			return state.partners
-		}
+		},
+		getProducts (state) {
+			return state.products
+		},
   },
   mutations: {
 		isOpenCart (state) {
@@ -33,8 +31,8 @@ export default createStore({
 		fetchPartners (context) {
 			context.state.partners = require('../db/partners')
 		},
-		fetchRestorantByID (context) {
-			context.state.pizzaBurger = require('../db/pizza-burger')
+		fetchProductsByRestourant (context, puth) {
+			context.state.products = require(`../db/${puth}`)
 		},
   },
   modules: {

@@ -14,16 +14,15 @@
 					<!-- /.card-info --> 
 				</div>
 				<div class="cards cards-menu">
-					<div class="card">
-						<img src="../assets/img/pizza-plus/pizza-vesuvius.jpg" alt="image" class="card-image" />
+					<div class="card" v-for="product in products" :key="product.id">
+						<img :src="require(`../assets/${product.image}`)" alt="image" class="card-image" />
 						<div class="card-text">
 							<div class="card-heading">
-								<h3 class="card-title card-title-reg">Пицца Везувий</h3>
+								<h3 class="card-title card-title-reg">{{ product.name }}</h3>
 							</div>
 							<!-- /.card-heading -->
 							<div class="card-info">
-								<div class="ingredients">Соус томатный, сыр «Моцарелла», ветчина, пепперони, перец
-									«Халапенье», соус «Тобаско», томаты.
+								<div class="ingredients">{{ product.description }}
 								</div>
 							</div>
 							<!-- /.card-info -->
@@ -32,7 +31,7 @@
 									<span class="button-card-text">В корзину</span>
 									<span class="button-cart-svg"></span>
 								</button>
-								<strong class="card-price-bold">545 ₽</strong>
+								<strong class="card-price-bold">{{ product.price }} ₽</strong>
 							</div>
 						</div>
 						<!-- /.card-text -->
@@ -44,6 +43,7 @@
 		</div>
 		<!-- /.container -->
 	</main>
+	
 </template>
 
 <script>
@@ -51,6 +51,22 @@
 		name: 'restorantViev',
 		components: {
 			
+		},
+		props: {
+			puth: String
+		},
+		data () {
+			return {
+				
+			}
+		},
+		computed: {
+		products () {
+			return this.$store.getters['getProducts'];
 		}
+	},
+	created () {
+		this.$store.dispatch('fetchProductsByRestourant', this.puth)
+	}
 	}
 </script>
